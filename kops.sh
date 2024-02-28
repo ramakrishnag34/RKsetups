@@ -14,8 +14,8 @@ chmod +x kops-linux-amd64 kubectl
 mv kubectl /usr/local/bin/kubectl
 mv kops-linux-amd64 /usr/local/bin/kops
 
-aws s3api create-bucket --bucket rkccit987.k8s.local --region ap-south-2
-aws s3api put-bucket-versioning --bucket rkccit987.k8s.local --region ap-south-2 --versioning-configuration Status=Enabled
+aws s3api create-bucket --bucket rkccit987.k8s.local --region us-east-1
+aws s3api put-bucket-versioning --bucket rkccit987.k8s.local --region us-east-1 --versioning-configuration Status=Enabled
 export KOPS_STATE_STORE=s3://rkccit987.k8s.local
-kops create cluster --name rama.k8s.local --zones ap-south-2 --master-count=1 --master-size t3.medium --node-count=2 --node-size t3.micro
+kops create cluster --name rama.k8s.local --zones us-east-1a --master-count=1 --master-size t2.medium --node-count=2 --node-size t2.micro
 kops update cluster --name rama.k8s.local --yes --admin

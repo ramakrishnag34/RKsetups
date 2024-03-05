@@ -19,4 +19,3 @@ aws s3api put-bucket-versioning --bucket rkccit987456.k8s.local --region us-east
 export KOPS_STATE_STORE=s3://rkccit987456.k8s.local
 kops create cluster --name ramas.k8s.local --zones us-east-1a --master-count=1 --master-size t2.medium --node-count=2 --node-size t2.micro
 kops update cluster --name ramas.k8s.local --yes --admin
-~

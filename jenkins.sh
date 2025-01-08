@@ -1,9 +1,11 @@
-#STEP-1: INSTALLING GIT JAVA-1.8.0 MAVEN 
+#STEP-1: INSTALLING GIT MAVEN TREE
 yum install git tree maven -y
 
 #STEP-2: GETTING THE REPO (jenkins.io --> download -- > redhat)
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
 
 #STEP-3: DOWNLOAD JAVA11 AND JENKINS
 sudo amazon-linux-extras enable corretto17
